@@ -32,13 +32,12 @@
 
     @* Partials*@
 
-    <partial name="_NavBarPartialView" />
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-    <partial name="_FooterPartialView" />
+    @await Component.InvokeAsync("NavBar")
+    @await Component.InvokeAsync("Slider")
+
+    @RenderBody()
+    @await Component.InvokeAsync("Subscribe")
+    @await Component.InvokeAsync("Footer")
 
 
     @* Scripts*@
